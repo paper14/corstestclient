@@ -16,7 +16,7 @@ app.use(session(app));
 // Get Session in 'http://localhost:3111/'
 app.use(function * (next) {
   var options = {
-    url: 'http://corstestserver.herokuapp.com/',
+    url: 'http://localhost:3000/',
     headers: {
       'User-Agent': 'request'
     },
@@ -26,6 +26,7 @@ app.use(function * (next) {
 
   var sessionNameVal = response.caseless.dict.name;
   console.log(sessionNameVal);
+  this.session.name = null;
   this.session.name = {
     'name': sessionNameVal
   }
@@ -60,4 +61,5 @@ app.use(serve(__dirname + '/js'));
 var port = Number(process.env.PORT || 3001);
 
 app.listen(port);
-console.log('Listening to Client: 3001');
+
+console.log("Listening to PORT " + port);

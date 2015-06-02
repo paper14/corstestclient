@@ -1,12 +1,12 @@
-var invocation = new XMLHttpRequest();
-var url = 'http://bar.other/resources/public-data/';
-
-function callOtherDomain() {
-  if (invocation) {
-    invocation.open('GET', url, true);
-    invocation.onreadystatechange = handler;
-    invocation.send();
-  }
-}
-
-callOtherDomain();
+jQuery(document).ready(function($) {
+  $('.btnSubmit').on('click', function() {
+    $.ajax({
+      url: 'http://localhost:3000/ajax-test',
+      crossDomain: true,
+      method: 'GET',
+      success: function(data) {
+        console.log(data);
+      }
+    });
+  });
+});
