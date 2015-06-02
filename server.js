@@ -62,4 +62,4 @@ var port = Number(process.env.PORT || 3001);
 
 app.listen(port);
 
-console.log("Listening to PORT " + port);
+console.log("Listening to PORT CLIENT: " + port);
