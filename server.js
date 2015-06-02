@@ -16,7 +16,7 @@ app.use(session(app));
 // Get Session in 'http://localhost:3111/'
 app.use(function * (next) {
   var options = {
-    url: 'http://localhost:3111',
+    url: 'http://corstestserver.herokuapp.com/',
     headers: {
       'User-Agent': 'request'
     },
